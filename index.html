@@ -1,23 +1,290 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
-    <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
+
+  <!-- Schema.org 구조화 데이터 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.example.com/fetal-insurance-guide"
+    },
+    "headline": "태아보험 필수특약 2026년 완벽 가이드: 가입시기, 핵심 보장, 순위 추천",
+    "image": [
+      "https://www.example.com/images/fetal-insurance-main.jpg"
+    ],
+    "datePublished": "2026-01-01T08:00:00+09:00",
+    "dateModified": "2026-01-01T08:00:00+09:00",
+    "author": {
+      "@type": "Person",
+      "name": "태아보험 전문가 그룹"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "맘편한 가이드",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.example.com/images/logo.png"
+      }
+    },
+    "description": "2026년 기준 태아보험 가입 시 반드시 알아야 할 필수 특약 완벽 분석. 저체중 인큐베이터, 선천이상, 뇌질환 등 핵심 보장 내용과 합리적인 가격으로 가입하는 방법, 전문가가 추천하는 순위 비교 정보까지 제공합니다."
+  }
+  </script>
+
+  <!-- Canonical URL 설정 -->
+  <link rel="canonical" href="https://www.example.com/fetal-insurance-guide">
+
+  <!-- 스타일링 -->
+  <style>
+    /* 기본 레이아웃 및 폰트 설정 */
+    body { font-family: 'Malgun Gothic', '맑은 고딕', Arial, sans-serif; margin: 0; padding: 0; color: #333; line-height: 1.8; background-color: #f8f9fa; }
+    .container { max-width: 900px; margin: 20px auto; padding: 20px; background-color: #ffffff; border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); }
+    h1, h2, h3, h4 { color: #1e3a8a; font-weight: 700; line-height: 1.5; }
+    h1 { font-size: 2.5em; text-align: center; margin-bottom: 30px; }
+    h2 { font-size: 2.0em; margin-top: 40px; border-left: 6px solid #1e3a8a; padding-left: 15px; }
+    h3 { font-size: 1.5em; margin-top: 30px; color: #3b82f6; }
+    h4 { font-size: 1.2em; margin-top: 20px; color: #4b5563; }
+    p { margin-bottom: 20px; font-size: 1.05em; }
+    a { color: #3b82f6; text-decoration: none; transition: color 0.3s; }
+    a:hover { color: #1e3a8a; text-decoration: underline; }
+
+    /* 핵심 섹션 디자인 */
+    section { margin-bottom: 50px; padding: 20px 0; border-bottom: 1px dashed #e5e7eb; }
+    section:last-child { border-bottom: none; }
+    .intro-section { background-color: #e0f2fe; padding: 30px; border-radius: 8px; text-align: center; }
+    .intro-section p { font-size: 1.1em; }
+
+    /* CTA 버튼 및 하이라이트 */
+    .cta-button { display: inline-block; background: #ef4444; color: #fff; padding: 15px 30px; border-radius: 8px; font-size: 1.2em; font-weight: bold; text-align: center; margin-top: 20px; transition: background 0.3s; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
+    .cta-button:hover { background: #dc2626; text-decoration: none; }
+    .highlight { background-color: #fffbe6; padding: 15px; border-left: 5px solid #fde047; margin-top: 20px; border-radius: 4px; }
+    .alert { background-color: #fef2f2; padding: 15px; border-left: 5px solid #ef4444; margin-top: 20px; border-radius: 4px; }
+
+    /* 리스트 및 표 디자인 */
+    ul { list-style: none; padding-left: 0; }
+    ul li { margin-bottom: 10px; padding-left: 25px; position: relative; }
+    ul li:before { content: "✓"; position: absolute; left: 0; color: #10b981; font-weight: bold; font-size: 1.2em; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th, td { border: 1px solid #ddd; padding: 12px; text-align: center; font-size: 0.95em; }
+    th { background-color: #eef2ff; color: #1e3a8a; font-weight: bold; }
+    td { background-color: #ffffff; }
+
+    /* 카드형 레이아웃 */
+    .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 20px; }
+    .card { background-color: #f0f9ff; padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); }
+    .card h4 { margin-top: 0; color: #0c4a6e; }
+
+    /* 입력 폼 디자인 */
+    form { background-color: #ffffff; padding: 30px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); }
+    label { display: block; margin-bottom: 8px; font-weight: bold; color: #4b5563; }
+    input[type="text"], input[type="tel"], textarea { width: calc(100% - 24px); padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 1em; margin-bottom: 15px; transition: border-color 0.3s; }
+    input[type="text"]:focus, input[type="tel"]:focus, textarea:focus { border-color: #3b82f6; outline: none; box-shadow: 0 0 5px rgba(59, 130, 246, 0.3); }
+    textarea { resize: vertical; }
+
+    /* 푸터 */
+    footer { text-align: center; padding: 20px; background-color: #1e3a8a; color: #d1d5db; margin-top: 30px; border-radius: 0 0 10px 10px; font-size: 0.9em; }
+    footer p { margin: 5px 0; }
+  </style>
+
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- 헤더 -->
+    <header>
+      <h1>태아보험 필수특약 2026년 가이드: 가입시기, 핵심 보장, 순위 추천</h1>
+      <p class="intro-section">새로운 생명을 맞이하는 예비 부모님들을 위한 2026년 태아보험 <strong style="color: #ef4444;">필수특약</strong> 완벽 분석. <br>가장 저렴한 가격으로 최고의 보장을 받는 <strong style="color: #ef4444;">가입 전략</strong>을 공개합니다.</p>
+    </header>
+
+    <!-- 내비게이션 -->
+    <nav style="text-align: center; margin-bottom: 30px;">
+      <a href="#essential" class="cta-button" style="background: #10b981;">필수특약 확인하기</a>
+      <a href="#compare" class="cta-button" style="background: #3b82f6;">견적 비교 & 순위</a>
+      <a href="#faq" class="cta-button" style="background: #fde047; color: #333;">FAQ</a>
     </nav>
-    <main>
-      <h1>Home page</h1>
-    </main>
-  </body>
-</html>
+
+    <!-- SEO 자동완성 키워드 섹션 -->
+    <section>
+      <h2>태아보험 가입 시, 예비 부모님들이 <strong style="color: #ef4444;">가장 많이 찾는 키워드</strong></h2>
+      <p>네이버 검색창에 "태아보험"을 입력하면 자동완성되는 주요 검색 키워드입니다. 이러한 키워드를 통해 예비 부모님들의 고민을 예측하고 해결책을 제시합니다.</p>
+      <div class="card-grid">
+        <div class="card"><h4>가입 시기 (몇 주차?)</h4><p>태아보험 가입은 임신 22주 이전이 중요합니다. 이 시기를 놓치면 보장 범위가 줄어들 수 있습니다.</p></div>
+        <div class="card"><h4>필수 특약 순위 (어떤 것을 넣어야 할까?)</h4><p>가장 핵심적인 선천이상, 저체중 인큐베이터 특약은 필수입니다. 자세한 내용은 아래에서 다룹니다.</p></div>
+        <div class="card"><h4>가격 및 견적 비교 (저렴한곳 찾는 방법)</h4><p>보험사마다 가격 차이가 크므로 꼼꼼한 비교가 필요합니다. 다이렉트와 설계사 가입의 장단점도 분석합니다.</p></div>
+        <div class="card"><h4>만기 설정 (30세 vs 100세)</h4><p>태아보험을 어린이보험으로 전환 시, 만기 설정은 장기적인 관점에서 중요합니다.</p></div>
+      </div>
+    </section>
+
+    <!-- 핵심 컨텐츠 1: 필수 특약 분석 -->
+    <section id="essential">
+      <h2>핵심 분석: 2026년 태아보험 <strong style="color: #ef4444;">필수특약</strong> 상세 가이드</h2>
+      <p>태아보험의 핵심은 태어날 아기에게 발생할 수 있는 선천성 질환이나 저체중아 출산 등에 대비하는 것입니다. 태아보험은 출생 직후부터 보장받는 어린이보험으로 전환되므로, 태아 시기 보장을 위한 <strong style="color: #ef4444;">필수특약</strong>을 놓쳐서는 안 됩니다.</p>
+
+      <h3>태아보험 필수특약 3가지: 왜 중요한가요?</h3>
+      <div class="card-grid">
+        <div class="card">
+          <h4>1. 선천이상 관련 특약 (수술비/진단비)</h4>
+          <p>선천이상은 태아가 태어날 때부터 가지고 있는 질병이나 기형을 의미합니다. 통계에 따르면 전체 출생아의 3~5%가 선천성 기형을 가지고 태어난다고 합니다. <a href="https://namu.wiki/w/%EC%84%A0%EC%B2%9C%EC%84%B1%20%EC%A7%88%ED%99%98" target="_blank">나무위키 선천성 질환 정보</a><br>이 특약은 선천성 기형으로 인한 수술이나 진단 시 보장하며, 특히 뇌질환이나 심장질환 등 중대한 선천성 이상에 대비하기 위해 <strong style="color: #ef4444;">필수</strong>로 가입해야 합니다.</p>
+        </div>
+        <div class="card">
+          <h4>2. 저체중아 인큐베이터 입원일당 특약</h4>
+          <p>저체중아(미숙아)는 출생 시 몸무게가 2.5kg 미만인 아기를 말합니다. 최근 고령 출산 증가로 미숙아 출산율이 늘어나는 추세입니다. 저체중으로 태어난 아기는 인큐베이터에서 집중적인 관리를 받아야 하며, 이 때 발생하는 비용이 매우 높습니다. 이 특약은 인큐베이터 입원 시 일당을 지급하여 경제적 부담을 덜어줍니다.</p>
+        </div>
+        <div class="card">
+          <h4>3. 신생아 질병 입원일당 특약</h4>
+          <p>신생아가 태어난 직후 겪을 수 있는 황달, 감염, 폐렴 등의 질병으로 입원하게 될 경우 보장하는 특약입니다. 신생아는 면역력이 약해 작은 질병에도 입원하는 경우가 많습니다. <strong style="color: #ef4444;">필수</strong> 특약 중 하나로 꼽히며, 입원 기간 동안의 비용을 보전해줍니다.</p>
+        </div>
+      </div>
+
+      <div class="highlight">
+        <h4>태아보험 가입 시기: 22주 이전이 골든타임!</h4>
+        <p>태아보험 가입은 임신 22주 이전에 완료해야 합니다. 22주가 지나면 태아 특약(선천이상, 저체중) 가입이 불가능해집니다. 또한, 임신 중 병원에서 고위험 산모 진단을 받거나 특정 질병 이력이 생기면 가입이 제한되거나 거절될 수 있습니다. <strong style="color: #ef4444;">가입 시기</strong>를 놓치지 않는 것이 가장 중요합니다.</p>
+      </div>
+
+      <!-- 추가 정보성 텍스트 (총 20000자 목표를 위한 확장) -->
+      <p>태아보험의 <strong style="color: #ef4444;">장점</strong>은 출생 후 바로 보장이 시작되며, 특히 태아 시기에만 가입할 수 있는 독점적인 <strong style="color: #ef4444;">필수특약</strong>을 포함한다는 점입니다. 반대로 <strong style="color: #ef4444;">단점</strong>으로는 가입 기간에 따른 보험료 <strong style="color: #ef4444;">금액</strong> 부담이 있으며, 불필요한 특약까지 추가할 경우 <strong style="color: #ef4444;">평균</strong> 보험료가 상승할 수 있다는 점입니다. 따라서 <strong style="color: #ef4444;">내돈내산</strong> 후기를 참고하여 합리적인 <strong style="color: #ef4444;">가입</strong> 설계를 하는 것이 중요합니다.</p>
+
+      <h4>태아보험 필수특약 vs. 비필수특약 <strong style="color: #ef4444;">차이점</strong></h4>
+      <p>많은 예비 부모님들이 <strong style="color: #ef4444;">필수특약</strong>과 선택특약을 혼동합니다. <strong style="color: #ef4444;">필수특약</strong>은 출생 직후 발생 가능성이 높고 고비용이 예상되는 질환에 대비합니다. 반면 선택특약(비필수특약)은 성인이 된 이후에 필요한 암 진단비, 뇌혈관 질환 진단비 등 어린이보험의 성격을 갖는 보장입니다. <strong style="color: #ef4444;">저렴한곳</strong>을 찾는다고 해서 <strong style="color: #ef4444;">필수특약</strong>을 제외해서는 안 됩니다.</p>
+
+      <div class="highlight">
+        <h4>2026년 태아보험 시장 동향 및 변화</h4>
+        <p>2026년 태아보험 시장에서는 출생률 감소와 건강보험 정책 변화에 따라 일부 특약의 보장 한도가 조정되거나 신규 특약이 출시되는 경향이 있습니다. 특히 환경적 요인으로 인한 알레르기나 아토피 관련 보장이 강화되는 추세입니다. 보험사들은 <strong style="color: #ef4444;">저렴한곳</strong>을 찾는 소비자를 위해 다이렉트 상품을 강화하고 있으며, <strong style="color: #ef4444;">가입</strong> 고객을 위한 다양한 부가 서비스를 제공합니다.</p>
+      </div>
+    </section>
+
+    <!-- 핵심 컨텐츠 2: 가입 전략 및 견적 비교 -->
+    <section id="compare">
+      <h2>가입 전략: <strong style="color: #ef4444;">태아보험 순위</strong> 및 <strong style="color: #ef4444;">예상 비용</strong> 분석</h2>
+      <p>태아보험 <strong style="color: #ef4444;">가입</strong> 시 <strong style="color: #ef4444;">순위</strong>를 정하는 기준은 보험료 <strong style="color: #ef4444;">금액</strong>뿐 아니라 보장 범위와 보장 기간입니다. 무조건 <strong style="color: #ef4444;">저렴한곳</strong>을 찾기보다는 보장의 <strong style="color: #ef4444;">장단점</strong>을 비교해야 합니다.</p>
+
+      <h3>태아보험 견적 비교 핵심 포인트</h3>
+      <ul>
+        <li><strong>만기 설정 (30세 vs 100세):</strong> 30세 만기로 설정하면 <strong style="color: #ef4444;">예상</strong> 보험료가 <strong style="color: #ef4444;">저렴</strong>해지지만, 100세 만기로 설정하면 성인기까지 보장을 받을 수 있습니다. 전문가들은 <strong style="color: #ef4444;">필수특약</strong>이 집중된 태아 시기 보장은 30세로 짧게 설정하고, 이후 성인기 보장은 그때 상황에 맞춰 재가입하는 것을 <strong style="color: #ef4444;">추천</strong>하기도 합니다.</li>
+        <li><strong>보장 금액 (진단비):</strong> 선천이상 진단비, 뇌질환 진단비 등 핵심 특약의 <strong style="color: #ef4444;">금액</strong>이 적절한지 확인해야 합니다. 1000만원 이상의 진단비를 <strong style="color: #ef4444;">추천</strong>하는 경우가 많습니다.</li>
+        <li><strong>비갱신형 vs 갱신형:</strong> 비갱신형은 초기 보험료가 높지만, 납입 기간 동안 보험료 변동이 없습니다. 갱신형은 초기 보험료가 <strong style="color: #ef4444;">저렴</strong>하지만, 갱신 시점에 보험료가 오를 수 있습니다.</li>
+      </ul>
+
+      <h3>태아보험 <strong style="color: #ef4444;">평균</strong> 보험료 <strong style="color: #ef4444;">예상</strong> (2026년 기준)</h3>
+      <table border="1">
+        <thead>
+          <tr>
+            <th>구분</th>
+            <th>30세 만기 (비갱신형)</th>
+            <th>100세 만기 (비갱신형)</th>
+            <th>설명</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>기본 보장 (실손 + 핵심 <strong style="color: #ef4444;">필수특약</strong>)</td>
+            <td>5만원대</td>
+            <td>10만원대 이상</td>
+            <td>핵심 보장 위주로 구성했을 때의 <strong style="color: #ef4444;">평균</strong> <strong style="color: #ef4444;">금액</strong>입니다.</td>
+          </tr>
+          <tr>
+            <td>종합 보장 (핵심 + 선택 <strong style="color: #ef4444;">필수특약</strong>)</td>
+            <td>7만원~9만원대</td>
+            <td>15만원대 이상</td>
+            <td>암, 뇌혈관, 심장질환 등 성인기 보장을 강화했을 때의 <strong style="color: #ef4444;">예상</strong> <strong style="color: #ef4444;">금액</strong>입니다.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>※ 위의 <strong style="color: #ef4444;">평균</strong> <strong style="color: #ef4444;">금액</strong>은 보험사, 가입 시기, 특약 구성에 따라 달라질 수 있습니다. 정확한 <strong style="color: #ef4444;">예상</strong> <strong style="color: #ef4444;">금액</strong>은 반드시 전문가 상담을 통해 확인하세요.</p>
+
+      <h4>태아보험 <strong style="color: #ef4444;">추천</strong> <strong style="color: #ef4444;">순위</strong> (가이드라인)</h4>
+      <p>특정 보험사의 <strong style="color: #ef4444;">순위</strong>를 매기기보다는, 보장 내용에 따라 <strong style="color: #ef4444;">추천</strong>하는 기준을 제시합니다. 태아보험은 출생 직후 보장 범위가 넓은 상품이 우선시됩니다. 특히 <strong style="color: #ef4444;">저렴한곳</strong>을 찾는다면 다이렉트 상품을 고려해볼 수 있습니다.</p>
+      <div class="card-grid">
+        <div class="card">
+          <h4>가이드라인 1: 선천이상 보장이 넓은 회사</h4>
+          <p>선천이상 수술비, 진단비에서 보장 범위가 넓고 보장 <strong style="color: #ef4444;">금액</strong>이 큰 회사를 우선적으로 <strong style="color: #ef4444;">추천</strong>합니다. 일부 보험사는 특정 선천이상에 대해 보장을 제외하는 경우가 있으므로 약관을 꼼꼼히 확인해야 합니다.</p>
+        </div>
+        <div class="card">
+          <h4>가이드라인 2: 저체중 인큐베이터 보장이 충분한 회사</h4>
+          <p>저체중아 인큐베이터 입원일당 특약의 보장 한도가 충분한지 확인하세요. 입원 기간에 따라 <strong style="color: #ef4444;">금액</strong>이 결정되므로, 일당 <strong style="color: #ef4444;">금액</strong>을 높게 설정하는 것이 유리합니다.</p>
+        </div>
+        <div class="card">
+          <h4>가이드라인 3: <strong style="color: #ef4444;">내돈내산</strong> <strong style="color: #ef4444;">후기</strong>가 많은 회사</h4>
+          <p>실제 <strong style="color: #ef4444;">가입</strong> <strong style="color: #ef4444;">후기</strong>를 통해 보험금 청구가 쉬운지, 담당 설계사의 서비스가 좋은지 등도 중요한 <strong style="color: #ef4444;">순위</strong> 결정 요소입니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 핵심 컨텐츠 3: FAQ 및 추가 팁 -->
+    <section id="faq">
+      <h2>자주 묻는 질문 (FAQ)</h2>
+      <div class="faq-list">
+        <div class="item">
+          <h3>Q1: 태아보험 <strong style="color: #ef4444;">필수특약</strong>은 왜 이렇게 많나요?</h3>
+          <p>A: 태아보험은 태아 시기의 위험뿐 아니라 출생 후 어린이보험으로 전환되어 성장기 질병까지 보장합니다. 따라서 태아 시기에 필요한 <strong style="color: #ef4444;">필수특약</strong>(선천이상, 저체중)과 성인기까지 가져갈 보장 특약이 함께 구성되어 많아 보일 수 있습니다. <strong style="color: #ef4444;">장단점</strong>을 고려해 <strong style="color: #ef4444;">가입</strong>해야 합니다.</p>
+        </div>
+        <div class="item">
+          <h3>Q2: 태아보험 <strong style="color: #ef4444;">가입 시기</strong>를 놓치면 어떻게 되나요?</h3>
+          <p>A: 임신 22주 이후에 <strong style="color: #ef4444;">가입</strong>하게 되면 <strong style="color: #ef4444;">필수특약</strong>인 선천이상 및 저체중 관련 보장을 받을 수 없습니다. 일반적인 어린이보험으로만 <strong style="color: #ef4444;">가입</strong>이 가능하며, 이는 태아보험의 가장 큰 <strong style="color: #ef4444;">장점</strong>을 포기하는 것입니다.</p>
+        </div>
+        <div class="item">
+          <h3>Q3: <strong style="color: #ef4444;">저렴한곳</strong>을 찾으려면 어떻게 해야 하나요?</h3>
+          <p>A: <strong style="color: #ef4444;">저렴한곳</strong>을 찾는 가장 좋은 방법은 <strong style="color: #ef4444;">필수특약</strong> 외에 불필요한 선택 특약을 최소화하고, 만기를 30세로 짧게 설정하는 것입니다. 또한, 다이렉트 보험을 이용하면 설계사 수수료가 절감되어 <strong style="color: #ef4444;">금액</strong>이 <strong style="color: #ef4444;">저렴</strong>해지는 <strong style="color: #ef4444;">장점</strong>이 있습니다.</p>
+        </div>
+        <div class="item">
+          <h3>Q4: <strong style="color: #ef4444;">내돈내산</strong> <strong style="color: #ef4444;">후기</strong>를 보면 어떤 <strong style="color: #ef4444;">차이점</strong>이 있나요?</h3>
+          <p>A: <strong style="color: #ef4444;">내돈내산</strong> <strong style="color: #ef4444;">후기</strong>를 보면 보험금 청구의 용이성, 설계사의 전문성, 보험사별 서비스 <strong style="color: #ef4444;">차이점</strong> 등이 중요하게 언급됩니다. <strong style="color: #ef4444;">순위</strong>가 높은 보험사라도 <strong style="color: #ef4444;">후기</strong>를 통해 실제 경험을 확인하는 것이 좋습니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 외부 신뢰성 링크 섹션 -->
+    <section>
+      <h2>공신력 있는 외부 정보 출처</h2>
+      <p>태아보험 및 출산 관련 통계는 공인된 기관의 자료를 참고하는 것이 좋습니다. 아래는 참고할 만한 외부 사이트입니다.</p>
+      <ul>
+        <li><a href="https://www.e-kosis.kr/index/index.do" target="_blank">통계청 KOSIS (출생, 사망 통계)</a></li>
+        <li><a href="https://www.mohw.go.kr/react/index.jsp" target="_blank">보건복지부 (산모 및 아동 건강 정보)</a></li>
+        <li><a href="https://www.fss.or.kr/main/index.do" target="_blank">금융감독원 (보험 관련 정보 및 민원)</a></li>
+        <li><a href="https://www.kihasa.re.kr/" target="_blank">한국보건사회연구원 (출산 관련 연구자료)</a></li>
+        <li><a href="https://namu.wiki/w/%EC%8B%A4%EC%86%90%EB%B3%B4%ED%97%98" target="_blank">나무위키 실손보험 관련 정보</a></li>
+      </ul>
+    </section>
+
+    <!-- 상담 신청 및 체류시간 늘리기 위한 요소 -->
+    <section id="contact">
+      <h2><strong style="color: #ef4444;">태아보험 필수특약</strong> 맞춤 설계 <strong style="color: #ef4444;">추천</strong> 및 무료 견적 상담</h2>
+      <p>수많은 보험 상품 중에서 우리 아이에게 꼭 맞는 <strong style="color: #ef4444;">필수특약</strong>을 찾는 것은 쉽지 않습니다. 복잡한 내용을 이해하고 <strong style="color: #ef4444;">저렴한곳</strong>을 찾기 위해 시간을 낭비하지 마세요. 전문가와 1:1 상담을 통해 가장 합리적인 <strong style="color: #ef4444;">가입</strong> 설계를 도와드립니다.</p>
+
+      <!-- 체류시간 증대를 위한 상세 입력 폼 -->
+      <form action="/submit-quote" method="post">
+        <h4>태아보험 맞춤 견적 신청서</h4>
+        <div class="card-grid">
+          <div>
+            <label for="name">예비 부모님 성함</label>
+            <input type="text" id="name" name="name" placeholder="홍길동" required>
+          </div>
+          <div>
+            <label for="phone">연락처</label>
+            <input type="tel" id="phone" name="phone" placeholder="010-1234-5678" required>
+          </div>
+          <div>
+            <label for="birthDate">출산 예정일 또는 임신 주차</label>
+            <input type="text" id="birthDate" name="birthDate" placeholder="예: 2026년 10월 예정 / 18주차" required>
+          </div>
+          <div>
+            <label for="budget">월 희망 보험료 <strong style="color: #ef4444;">예상 금액</strong> (선택)</label>
+            <input type="text" id="budget" name="budget" placeholder="예: 5만원 내외 또는 7만원 내외">
+          </div>
+        </div>
+        <div>
+          <label for="needs">궁금한 점 및 <strong style="color: #ef4444;">필수특약</strong> 문의 사항</label>
+          <textarea id="needs" name="needs" rows="4" placeholder="예: 30세 만기로 할지 100세 만기로 할지 고민입니다. 저체중 특약 보장 금액을 높게 잡고 싶습니다." required></textarea>
+        </div>
+        <button type="submit" class="cta-button" style="width: 100%;">맞춤 <strong style="color: #ef4444;">견적 요청하기</strong></button>
+      </form>
+    </section>
+
+    <!-- 푸터 -->
+    <footer>
+      <p>&copy; 2026 태아보험 전문가 그룹. 본 페이지는 정보 제공을 목적으로 하며, 실제 가입 전 약관을 반드시 확인하시기 바랍니다.</p>
+    </footer>
+
+  </div>
+
+  
